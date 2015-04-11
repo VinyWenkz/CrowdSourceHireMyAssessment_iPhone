@@ -49,7 +49,5 @@ class FirstViewController: UIViewController, WriteValueInFirstViewControllerDele
             statusLabel.text = "button pressed is \(info)"
         }
     }
-
-
 }
 

@@ -46,6 +46,7 @@ class SecondViewController : UIViewController {
         }
     }
 
+    //MARK: -IBAction
     @IBAction func numberButtonPressed(sender: UIButton) {
         if sender.tag == 1 {
             selectedNumberName = "ONE"
@@ -56,5 +57,9 @@ class SecondViewController : UIViewController {
         }
         
         navigationController?.popViewControllerAnimated(true)
+    }
+
+    @IBAction func goLastButtonClicked(sender: UIButton) {
+        performSegueWithIdentifier(SegueIdentifier.showThirdViewController.rawValue as String, sender: self)
     }
 }
