@@ -11,5 +11,4 @@ import Foundation
 
 protocol WriteValueInFirstViewControllerDelegate {
     func updateLabelWithInfo(info: String)
-    
 }

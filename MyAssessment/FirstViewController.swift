@@ -43,8 +43,13 @@ class FirstViewController: UIViewController, WriteValueInFirstViewControllerDele
     
     //MARK: -WriteValueInFirstViewControllerDelegate
     func updateLabelWithInfo(info: String) {
-        statusLabel.text = "button pressed is \(info)"
+        if info.isEmpty {
+            statusLabel.text = "None"
+        } else {
+            statusLabel.text = "button pressed is \(info)"
+        }
     }
+
 
 }
 

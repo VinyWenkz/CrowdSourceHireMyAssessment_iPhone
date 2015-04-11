@@ -35,14 +35,24 @@ class SecondViewController : UIViewController {
             selectedButtonLabel.text = "button pressed is \(buttonColorPressed!)"
         }
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        if self.isBeingDismissed() || self.isMovingFromParentViewController(){
+            if selectedNumberName != nil {
+            writeValueBackDelegate?.updateLabelWithInfo(selectedNumberName!)
+            } else {
+                writeValueBackDelegate?.updateLabelWithInfo("")
+            }
+        }
+    }
 
     @IBAction func numberButtonPressed(sender: UIButton) {
         if sender.tag == 1 {
-            writeValueBackDelegate?.updateLabelWithInfo("ONE")
+            selectedNumberName = "ONE"
         } else if sender.tag == 2 {
-            writeValueBackDelegate?.updateLabelWithInfo("TWO")
+            selectedNumberName = "TWO"
         } else {
-            writeValueBackDelegate?.updateLabelWithInfo("THREE")
+            selectedNumberName = "THREE"
         }
         
         navigationController?.popViewControllerAnimated(true)
