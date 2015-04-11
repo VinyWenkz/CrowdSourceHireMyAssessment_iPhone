@@ -8,9 +8,9 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, WriteValueInFirstViewControllerDelegate  {
     
-    var selectedButtonTag : Int?
+    var selectedColorButtonTag : Int?
     @IBOutlet weak var blueColorUIButton: UIButton!
     @IBOutlet weak var redColorUIButton: UIButton!
     @IBOutlet weak var greenColorUIButton: UIButton!
@@ -23,25 +23,28 @@ class FirstViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // Dispose of  any resources that can be recreated.
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == SegueIdentifier.showSecondViewController.rawValue as String {
             if let destinationVC = segue.destinationViewController as? SecondViewController {
-                destinationVC.buttonPressed = selectedButtonTag
-                
+                destinationVC.buttonColorPressed = selectedColorButtonTag
+                destinationVC.writeValueBackDelegate = self
             }
         }
     }
     
     //MARK: -IBAction
-
     @IBAction func buttonClicked(sender: UIButton) {
-        selectedButtonTag = sender.tag
+        selectedColorButtonTag = sender.tag
         performSegueWithIdentifier(SegueIdentifier.showSecondViewController.rawValue as String, sender: self)
     }
-
+    
+    //MARK: -WriteValueInFirstViewControllerDelegate
+    func updateLabelWithInfo(info: String) {
+        statusLabel.text = "button pressed is \(info)"
+    }
 
 }
 

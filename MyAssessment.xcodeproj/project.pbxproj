@@ -15,6 +15,7 @@
 		FC9DE6591AD96C0C00EF5E7C /* MyAssessmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DE6581AD96C0C00EF5E7C /* MyAssessmentTests.swift */; };
 		FC9DE6631AD96F4500EF5E7C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DE6621AD96F4500EF5E7C /* SecondViewController.swift */; };
 		FC9DE6651AD9743A00EF5E7C /* SegueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DE6641AD9743A00EF5E7C /* SegueIdentifier.swift */; };
+		FC9DE6671AD9812800EF5E7C /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DE6661AD9812800EF5E7C /* Protocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		FC9DE6581AD96C0C00EF5E7C /* MyAssessmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAssessmentTests.swift; sourceTree = "<group>"; };
 		FC9DE6621AD96F4500EF5E7C /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		FC9DE6641AD9743A00EF5E7C /* SegueIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueIdentifier.swift; sourceTree = "<group>"; };
+		FC9DE6661AD9812800EF5E7C /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				FC9DE6401AD96C0C00EF5E7C /* Supporting Files */,
 				FC9DE6621AD96F4500EF5E7C /* SecondViewController.swift */,
 				FC9DE6641AD9743A00EF5E7C /* SegueIdentifier.swift */,
+				FC9DE6661AD9812800EF5E7C /* Protocol.swift */,
 			);
 			path = MyAssessment;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			files = (
 				FC9DE6651AD9743A00EF5E7C /* SegueIdentifier.swift in Sources */,
 				FC9DE6631AD96F4500EF5E7C /* SecondViewController.swift in Sources */,
+				FC9DE6671AD9812800EF5E7C /* Protocol.swift in Sources */,
 				FC9DE6451AD96C0C00EF5E7C /* FirstViewController.swift in Sources */,
 				FC9DE6431AD96C0C00EF5E7C /* AppDelegate.swift in Sources */,
 			);

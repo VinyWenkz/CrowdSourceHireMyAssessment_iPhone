@@ -13,22 +13,38 @@ import UIKit
 class SecondViewController : UIViewController {
     
     @IBOutlet weak var selectedButtonLabel: UILabel!
-    var buttonPressed: Int?
+    var buttonColorPressed: Int?
+    var selectedNumberName: String?
+    var writeValueBackDelegate: WriteValueInFirstViewControllerDelegate?
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        if buttonPressed == 1 {
-            self.view.backgroundColor = UIColor.blueColor()
+        if buttonColorPressed != nil {
+            if buttonColorPressed == 1 {
+                self.view.backgroundColor = UIColor.blueColor()
+                
+            } else if buttonColorPressed == 2 {
+                self.view.backgroundColor = UIColor.redColor()
+                
+            } else {
+                self.view.backgroundColor = UIColor.greenColor()
+                
+            }
             
-        } else if buttonPressed == 2 {
-            self.view.backgroundColor = UIColor.redColor()
-            
-        } else if buttonPressed == 3 {
-            self.view.backgroundColor = UIColor.greenColor()
-            
+            selectedButtonLabel.text = "button pressed is \(buttonColorPressed!)"
+        }
+    }
+
+    @IBAction func numberButtonPressed(sender: UIButton) {
+        if sender.tag == 1 {
+            writeValueBackDelegate?.updateLabelWithInfo("ONE")
+        } else if sender.tag == 2 {
+            writeValueBackDelegate?.updateLabelWithInfo("TWO")
+        } else {
+            writeValueBackDelegate?.updateLabelWithInfo("THREE")
         }
         
-        selectedButtonLabel.text = "button pressed is \(buttonPressed!)"
+        navigationController?.popViewControllerAnimated(true)
     }
 }
