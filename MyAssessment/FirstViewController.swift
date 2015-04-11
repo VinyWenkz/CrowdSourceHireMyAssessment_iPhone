@@ -10,7 +10,7 @@ import UIKit
 
 class FirstViewController: UIViewController {
     
-    var selectedColor : UIColor?
+    var selectedButtonTag : Int?
     @IBOutlet weak var blueColorUIButton: UIButton!
     @IBOutlet weak var redColorUIButton: UIButton!
     @IBOutlet weak var greenColorUIButton: UIButton!
@@ -27,10 +27,9 @@ class FirstViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
         if segue.identifier == SegueIdentifier.showSecondViewController.rawValue as String {
             if let destinationVC = segue.destinationViewController as? SecondViewController {
-                destinationVC.backgroundColor = selectedColor
+                destinationVC.buttonPressed = selectedButtonTag
                 
             }
         }
@@ -39,13 +38,7 @@ class FirstViewController: UIViewController {
     //MARK: -IBAction
 
     @IBAction func buttonClicked(sender: UIButton) {
-        if sender.tag == 0 {
-            selectedColor = UIColor.blueColor()
-        } else if sender.tag == 1 {
-            selectedColor = UIColor.redColor()
-        } else if sender.tag == 2 {
-            selectedColor = UIColor.greenColor()
-        }
+        selectedButtonTag = sender.tag
         performSegueWithIdentifier(SegueIdentifier.showSecondViewController.rawValue as String, sender: self)
     }
 

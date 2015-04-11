@@ -12,11 +12,23 @@ import UIKit
 
 class SecondViewController : UIViewController {
     
-    var backgroundColor : UIColor?
+    @IBOutlet weak var selectedButtonLabel: UILabel!
+    var buttonPressed: Int?
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.view.backgroundColor = backgroundColor
+        if buttonPressed == 1 {
+            self.view.backgroundColor = UIColor.blueColor()
+            
+        } else if buttonPressed == 2 {
+            self.view.backgroundColor = UIColor.redColor()
+            
+        } else if buttonPressed == 3 {
+            self.view.backgroundColor = UIColor.greenColor()
+            
+        }
+        
+        selectedButtonLabel.text = "button pressed is \(buttonPressed!)"
     }
 }
